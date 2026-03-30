@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title><%= blog.title %></title>
+</head>
+
+<body>
+    <%- include("../components/Navbar") %>
+
+    <main class="page">
+        <header class="hero">
+            <p class="eyebrow"><%= blog.eyebrow %></p>
+            <h1><%= blog.title %></h1>
+            <p class="subtitle"><%= blog.subtitle %></p>
+            <div class="meta">
+                <% blog.meta.forEach((item) => { %>
+                    <span><%= item %></span>
+                <% }) %>
+            </div>
+        </header>
+
+        <article class="post">
+            <% blog.sections.forEach((section, index) => { %>
+                <% if (section.type === 'separator') { %>
+                    <hr class="post-separator" />
+                <% } else { %>
+                <% const prevIsSeparator = index > 0 && blog.sections[index - 1].type === 'separator'; %>
+                <section class="<%= [section.type === 'closing' ? 'closing' : '', prevIsSeparator ? 'no-divider' : ''].filter(Boolean).join(' ') %>">
+                    <% if (section.title) { %>
+                        <h2><%= section.title %></h2>
+                    <% } %>
+
+                    <% if (section.type === 'text') { %>
+                        <% section.paragraphs.forEach((paragraph) => { %>
+                            <p><%= paragraph %></p>
+                        <% }) %>
+                    <% } %>
+
+                    <% if (section.type === 'text_html') { %>
+                        <% section.paragraphsHtml.forEach((paragraph) => { %>
+                            <p><%- paragraph %></p>
+                        <% }) %>
+                    <% } %>
+
+                    <% if (section.type === 'code') { %>
+                        <pre><code><%= section.code %></code></pre>
+                    <% } %>
+
+                    <% if (section.type === 'commands') { %>
+                        <pre><code><%= section.command %></code></pre>
+                    <% } %>
+
+                    <% if (section.type === 'list') { %>
+                        <% if (section.description) { %>
+                            <p><%= section.description %></p>
+                        <% } %>
+                        <ul>
+                            <% section.items.forEach((item) => { %>
+                                <li><%= item %></li>
+                            <% }) %>
+                        </ul>
+                    <% } %>
+
+                    <% if (section.type === 'closing') { %>
+                        <% section.paragraphs.forEach((paragraph) => { %>
+                            <p><%= paragraph %></p>
+                        <% }) %>
+                    <% } %>
+                </section>
+                <% } %>
+            <% }) %>
+        </article>
+    </main>
+
+    <script src="/script.js"></script>
+</body>
+
+</html>

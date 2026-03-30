@@ -1,0 +1,200 @@
+[
+  {
+    "title": "Introduction to Rust",
+    "slug": "introduction-to-rust",
+    "series": "The Rust Book",
+    "date": "Mar 30, 2026",
+    "excerpt": "Restarting the Rust journey with a clean slate: installation, hello world, and Cargo basics.",
+    "eyebrow": "Rust Learning Journal",
+    "subtitle": "Starting again from scratch, this time with practice and small blogs to stay consistent.",
+    "meta": [
+      "Series: The Rust Book",
+      "Topic: Getting Started"
+    ],
+    "sections": [
+      {
+        "type": "text",
+        "title": "Why I'm Starting Over",
+        "paragraphs": [
+          "Hey everyone! From today onward I'm starting Rust from scratch again. I had started earlier, stopped, and forgot a lot. This time I'm writing small blogs alongside my learning so I can pick up where I left off and actually retain the concepts.",
+          "The biggest mistake I made before was not practicing enough. Without practice, things fade and it takes time to get back into the zone. So now I'm committing to consistent practice and documentation."
+        ]
+      },
+      {
+        "type": "text_html",
+        "title": "Learning Plan",
+        "paragraphsHtml": [
+          "I'm learning from <a href=\"https://doc.rust-lang.org/book/\" target=\"_blank\" rel=\"noreferrer\">The Rust Book</a>. It can feel a bit theoretical at times, but I know it will teach me a lot of new concepts.",
+          "Along the way, I'll solve coding problems I've already done in other languages as well as new ones. I want to be consistent this time, so let's start and see.",
+          "The introduction in the book explains who the book is for and how to use it. Prior coding experience helps you move faster, and without it some parts can feel harder at first."
+        ]
+      },
+      {
+        "type": "separator"
+      },
+      {
+        "type": "text",
+        "title": "1.1 Installation",
+        "paragraphs": [
+          "I'm on Ubuntu 22, so I followed the official Rust installer. One command and Rust was ready to go:"
+        ]
+      },
+      {
+        "type": "commands",
+        "command": "$ curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh"
+      },
+      {
+        "type": "text",
+        "paragraphs": [
+          "Rust was installed successfully. You can open the docs locally (including The Rust Book) with:"
+        ]
+      },
+      {
+        "type": "commands",
+        "command": "$ rustup doc"
+      },
+      {
+        "type": "text",
+        "paragraphs": [
+          "To keep toolchain up to date:"
+        ]
+      },
+      {
+        "type": "commands",
+        "command": "$ rustup update"
+      },
+      {
+        "type": "text",
+        "paragraphs": [
+          "To remove Rust from the system:"
+        ]
+      },
+      {
+        "type": "commands",
+        "command": "$ rustup self uninstall"
+      },
+      {
+        "type": "separator"
+      },
+      {
+        "type": "text",
+        "title": "1.2 Hello World",
+        "paragraphs": [
+          "Create a project directory, add a main.rs file, and use the classic hello world:"
+        ]
+      },
+      {
+        "type": "code",
+        "code": "fn main() {\n    println!(\"Hello, world!\");\n}"
+      },
+      {
+        "type": "text",
+        "title": "Compile and Run",
+        "paragraphs": [
+          "Compile the file (Rust is compiled) and run the output binary:"
+        ]
+      },
+      {
+        "type": "commands",
+        "command": "$ rustc main.rs"
+      },
+      {
+        "type": "commands",
+        "command": "$ ./main"
+      },
+      {
+        "type": "text",
+        "paragraphs": [
+          "You should see \"Hello, world!\" printed in the terminal."
+        ]
+      },
+      {
+        "type": "text",
+        "title": "1.3 Hello Cargo",
+        "paragraphs": [
+          "Cargo is Rust's build system and package manager, similar to npm in Node or pip in Python.",
+          "For small programs you might not need dependencies, but as projects grow, Cargo makes it easy to manage packages and builds without compiling everything manually."
+        ]
+      },
+      {
+        "type": "separator"
+      },
+      {
+        "type": "text",
+        "title": "Create a Cargo Project",
+        "paragraphs": [
+          "Create a new project using Cargo:"
+        ]
+      },
+      {
+        "type": "commands",
+        "command": "$ cargo new hello_cargo"
+      },
+      {
+        "type": "text",
+        "paragraphs": [
+          "This creates a hello_cargo directory with Cargo.toml, a .gitignore file, and src/main.rs."
+        ]
+      },
+      {
+        "type": "text",
+        "title": "Project Structure",
+        "paragraphs": [
+          "Cargo expects your source files inside the src directory. The top-level directory is for README files, license information, configuration files, and other metadata."
+        ]
+      },
+      {
+        "type": "text",
+        "title": "Build and Run",
+        "paragraphs": [
+          "Build the project and run the binary:"
+        ]
+      },
+      {
+        "type": "commands",
+        "command": "$ cargo build"
+      },
+      {
+        "type": "commands",
+        "command": "$ ./target/debug/hello_cargo"
+      },
+      {
+        "type": "text",
+        "title": "One Step Run",
+        "paragraphs": [
+          "Build and run in a single step:"
+        ]
+      },
+      {
+        "type": "commands",
+        "command": "$ cargo run"
+      },
+      {
+        "type": "text",
+        "paragraphs": [
+          "To verify compilation quickly without producing a binary:"
+        ]
+      },
+      {
+        "type": "commands",
+        "command": "$ cargo check"
+      },{
+        "type": "text",
+        "paragraphs": [
+          "optimized production build :"
+        ]
+      },
+      {
+        "type": "commands",
+        "command": "$ cargo build --release"
+      },
+      {
+        "type": "closing",
+        "title": "Wrapping Up",
+        "paragraphs": [
+          "That's all for today. See you tomorrow."
+        ]
+      }
+    ]
+  }
+]
