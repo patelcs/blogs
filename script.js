@@ -4,21 +4,21 @@ const root = document.documentElement;
 // Load saved theme (default to dark)
 if (localStorage.getItem("theme") === "light") {
     root.removeAttribute("data-theme");
-    toggleBtn.textContent = "🌙 Dark";
+    toggleBtn.textContent = "🌙";
 } else {
     root.setAttribute("data-theme", "dark");
-    toggleBtn.textContent = "☀️ Light";
+    toggleBtn.textContent = "☀️";
 }
 
 toggleBtn.addEventListener("click", () => {
     if (root.getAttribute("data-theme") === "dark") {
         root.removeAttribute("data-theme");
         localStorage.setItem("theme", "light");
-        toggleBtn.textContent = "🌙 Dark";
+        toggleBtn.textContent = "🌙";
     } else {
         root.setAttribute("data-theme", "dark");
         localStorage.setItem("theme", "dark");
-        toggleBtn.textContent = "☀️ Light";
+        toggleBtn.textContent = "☀️";
     }
 });
 

@@ -7,6 +7,7 @@
     --font-serif: "Times New Roman", "Noto Serif", "Liberation Serif", serif;
     --font-mono: "SFMono-Regular", "Menlo", "Consolas", monospace;
 
+    --bg-color: #ffffff;
     --text-color: #111827;
     --muted-color: #6b7280;
     --link-hover: #1d4ed8;
@@ -20,6 +21,7 @@
 }
 
 [data-theme="dark"] {
+    --bg-color: #000000;
     --text-color: #f9fafb;
     --muted-color: #9ca3af;
     --link-hover: #60a5fa;
@@ -54,6 +56,7 @@ html[data-theme="dark"] body {
 
 /* Navbar Styles */
 nav {
+    background-color: var(--bg-color);
     box-shadow: 0 1px 10px 0 var(--shadow-color);
     position: sticky;
     top: 0;
@@ -344,12 +347,8 @@ code {
 
     .meta {
         flex-direction: column;
+        margin-top: 0.5rem;
         gap: 0.5rem;
-    }
-
-    .hero,
-    .post {
-        padding: 2rem 1.5rem;
     }
 
     .card {
@@ -364,6 +363,10 @@ code {
         top: 0.6rem;
         right: 0.6rem;
         padding: 0.3rem 0.55rem;
+    }
+
+    .post section {
+        margin-top: 1rem;
     }
 }
 
@@ -434,11 +437,6 @@ code {
         padding: 2.25rem 1rem 3.5rem;
     }
 
-    .hero,
-    .post {
-        padding: 1.5rem 1rem;
-    }
-
     .cards {
         gap: 1rem;
     }
@@ -473,10 +471,5 @@ code {
 
     .page {
         padding: 2rem 0.85rem 3rem;
-    }
-
-    .hero,
-    .post {
-        padding: 1.25rem 0.85rem;
     }
 }
