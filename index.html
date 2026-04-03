@@ -1,64 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Blogs</title>
 </head>
-
 <body>
     <nav>
-    <div>
-        <a href="/" id="nav-brand">
-            <img src="/favicon.ico" alt="logo" width="32" height="32" />
-            CSP Blogs
-        </a>
         <div>
-            <a href="/blogs">Blogs</a>
-            <a href="https://portfolio-seven-iota-23.vercel.app/">About</a>
-            <button id="theme-toggle">🌙 Dark</button>
+            <a href="/" id="nav-brand">
+                <img src="/favicon.ico" alt="logo" width="32" height="32" />
+            </a>
+            <div>
+                <a href="/blogs">Blogs</a>
+                <a href="https://portfolio-seven-iota-23.vercel.app/">About</a>
+                <button id="theme-toggle">🌙 Dark</button>
+            </div>
         </div>
-    </div>
-</nav>
-
+    </nav>
     <main class="page">
         <header class="hero">
             <p class="eyebrow">Learning Log</p>
             <h1>Blog Posts</h1>
             <p class="subtitle">Short, practical notes from my journey learning Rust and building projects.</p>
         </header>
-
         <section class="list">
             <h2>Latest Posts</h2>
             <div class="cards">
-                
-                    <article class="card">
-                        <div class="card-meta">
-                            <span>The Rust Book</span>
-                            <span>Mar 30, 2026</span>
-                        </div>
-                        <h3><a href="/blogs/getting-started-with-rust">Getting Started with Rust</a></h3>
-                        <p>Restarting the Rust journey with a clean slate: installation, hello world, and Cargo basics.</p>
-                        <a class="card-link" href="/blogs/getting-started-with-rust">Read post</a>
-                    </article>
-                
-                    <article class="card">
-                        <div class="card-meta">
-                            <span>The Rust Book</span>
-                            <span>Apr 1, 2026</span>
-                        </div>
-                        <h3><a href="/blogs/variables-in-rust">Variables in Rust</a></h3>
-                        <p>Notes on variables, constants, and shadowing in Rust.</p>
-                        <a class="card-link" href="/blogs/variables-in-rust">Read post</a>
-                    </article>
-                
+                <article class="card bottom-separator">
+                    <div class="card-meta">
+                        <span>The Rust Book</span>
+                        <span>Mar 30, 2026</span>
+                    </div>
+                    <h3><a href="/blogs/getting-started-with-rust">Getting Started with Rust</a></h3>
+                    <p>Restarting the Rust journey with a clean slate: installation, hello world, and Cargo basics.</p>
+                    <a class="card-link" href="/blogs/getting-started-with-rust">Read post</a>
+                </article>
+                <article class="card bottom-separator">
+                    <div class="card-meta">
+                        <span>The Rust Book</span>
+                        <span>Apr 1, 2026</span>
+                    </div>
+                    <h3><a href="/blogs/variables-in-rust">Variables in Rust</a></h3>
+                    <p>Notes on variables, constants, and shadowing in Rust.</p>
+                    <a class="card-link" href="/blogs/variables-in-rust">Read post</a>
+                </article>
             </div>
         </section>
     </main>
-
     <script src="script.js"></script>
 </body>
-
 </html>

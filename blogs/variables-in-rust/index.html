@@ -10,295 +10,111 @@
 
 <body>
     <nav>
-    <div>
-        <a href="/" id="nav-brand">
-            <img src="/favicon.ico" alt="logo" width="32" height="32" />
-            CSP Blogs
-        </a>
         <div>
-            <a href="/blogs">Blogs</a>
-            <a href="https://portfolio-seven-iota-23.vercel.app/">About</a>
-            <button id="theme-toggle">🌙 Dark</button>
+            <a href="/" id="nav-brand">
+                <img src="/favicon.ico" alt="logo" width="32" height="32" />
+            </a>
+            <div>
+                <a href="/blogs">Blogs</a>
+                <a href="https://portfolio-seven-iota-23.vercel.app/">About</a>
+                <button id="theme-toggle">🌙 Dark</button>
+            </div>
         </div>
-    </div>
-</nav>
-
+    </nav>
     <main class="page">
         <header class="hero">
             <p class="eyebrow">Rust Learning Journal</p>
             <h1>Variables in Rust</h1>
             <p class="subtitle">Skipping the guessing game for now and focusing on Rust basics.</p>
             <div class="meta">
-                
-                    <span>Apr 1, 2026</span>
-                
-                
-                    <span>Series: The Rust Book</span>
-                
-                    <span>Topic: Variables</span>
-                
+                <span>Apr 1, 2026</span>
+                <span>Series: The Rust Book</span>
+                <span>Topic: Variables</span>
             </div>
         </header>
-
         <article class="post">
-            
-            
-                
-                
-                <section class="">
-                    
-                        <h2>Why This Topic</h2>
-                    
-
-                    
-                        
-                            <p class="">Hey everyone! Yesterday I skipped :( But I don&#39;t want to give any excuse or justification, so let&#39;s just start the next topic: Variables in Rust.</p>
-                        
-                    
-
-                    
-
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                
-                <section class="">
-                    
-
-                    
-                        
-                            <p class="">In the Rust Book, the second topic is <a href="https://doc.rust-lang.org/book/ch02-00-guessing-game-tutorial.html" target="_blank" rel="noreferrer">Programming a Guessing Game</a>, but I&#39;m skipping that for now. I&#39;ll cover the basics first and come back to it later.</p>
-                        
-                    
-
-                    
-
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                    <hr class="post-separator" />
-                
-            
-                
-                
-                <section class="no-divider">
-                    
-                        <h2>1. Variables and Mutability</h2>
-                    
-
-                    
-                        
-                            <p class="">We can declare variables using the <span class="highlight highlight-strong">let</span> keyword as shown in the code below.</p>
-                        
-                            <p class="">The syntax for declaring variables is: <span class="highlight highlight-strong">let &lt;var_name&gt;: &lt;var_type&gt; = &lt;var_val&gt;</span>. We&#39;ll talk about variable types in upcoming blogs.</p>
-                        
-                            <p class="">As shown in variable b&#39;s definition, the var_type is optional and determined by the compiler only because the value is initialized in the same statement.</p>
-                        
-                            <p class="">If declaration and initialization are split like variable x, then var_type is mandatory, and the value can be given later. But we cannot use x before initialization as shown.</p>
-                        
-                            <p class="">Variables are by default immutable in Rust. When a variable is immutable, once a value is bound to a name, you can&#39;t change that value. As shown in the code, if you try to assign a value to b or x you can&#39;t do it.</p>
-                        
-                    
-
-                    
-
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                
-                <section class="">
-                    
-
-                    
-
-                    
-                        <pre><code>fn main() {
+            <section>
+                <h2>Why This Topic</h2>
+                <p>Hey everyone! Yesterday I skipped :( But I don&#39;t want to give any excuse or
+                    justification, so let&#39;s just start the next topic: Variables in Rust.</p>
+            </section>
+            <section>
+                <p>In the Rust Book, the second topic is <a
+                        href="https://doc.rust-lang.org/book/ch02-00-guessing-game-tutorial.html" target="_blank"
+                        rel="noreferrer">Programming a Guessing Game</a>, but I&#39;m skipping that for now. I&#39;ll
+                    cover the basics first and come back to it later.</p>
+            </section>
+            <section class="no-divider">
+                <h2>1. Variables and Mutability</h2>
+                <p>We can declare variables using the let keyword as shown in the code below.</p>
+                <p>The syntax for declaring variables is: let &lt;var_name&gt;: &lt;var_type&gt; = &lt;var_val&gt;.
+                    We&#39;ll talk about variable types
+                    in upcoming blogs.</p>
+                <p>As shown in variable b&#39;s definition, the var_type is optional and determined by the
+                    compiler only because the value is initialized in the same statement.</p>
+                <p>If declaration and initialization are split like variable x, then var_type is mandatory, and
+                    the value can be given later. But we cannot use x before initialization as shown.</p>
+                <p>Variables are by default immutable in Rust. When a variable is immutable, once a value is
+                    bound to a name, you can&#39;t change that value. As shown in the code, if you try to assign a value
+                    to b or x you can&#39;t do it.</p>
+            </section>
+            <section>
+                <pre><code>fn main() {
     let a: i32 = 5;
     println!(&#34;The value of a is: {a}&#34;);
-
     let b = 10;
     // b = 12; // gives compile error
     println!(&#34;The value of b is: {b}&#34;);
-
     let x: i32;
     // println!(&#34;The value of x is: {x}&#34;);  // gives compile error
     x = 15;
     // x = 20; // gives compile error
     println!(&#34;The value of x is: {x}&#34;);
 }</code></pre>
-                    
-
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                
-                <section class="">
-                    
-
-                    
-                        
-                            <p class="">Below code shows how we can make variables mutable using the mut keyword in order to change the value that a variable holds.</p>
-                        
-                    
-
-                    
-
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                
-                <section class="">
-                    
-
-                    
-
-                    
-                        <pre><code>fn main() {
+            </section>
+            <section>
+                <p>Below code shows how we can make variables mutable using the mut keyword in order to change
+                    the value that a variable holds.</p>
+            </section>
+            <section>
+                <pre><code>fn main() {
     let mut x = 5;
     println!(&#34;The value of x is: {x}&#34;);
     x = 6;
     println!(&#34;The value of x is: {x}&#34;);
 }</code></pre>
-                    
-
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                    <hr class="post-separator" />
-                
-            
-                
-                
-                <section class="no-divider">
-                    
-                        <h2>2. Constants</h2>
-                    
-
-                    
-                        
-                            <p class="">Like immutable variables, constants are not allowed to change, but there are a few differences between constants and variables.</p>
-                        
-                            <p class="">First, we aren&#39;t allowed to use mut with constants. Constants aren&#39;t just immutable by default, they&#39;re always immutable. The var_type must be specified for constants.</p>
-                        
-                            <p class="">Constants can be declared in any scope, including the global scope, which makes them useful for values that many parts of code need to know about.</p>
-                        
-                            <p class="">The last difference is that constants may be set only to a constant expression, not the result of a value that could only be computed at runtime. This means constants must be known at compile time.</p>
-                        
-                            <p class="">Constants are valid for the entire time a program runs, within the scope in which they were declared.</p>
-                        
-                            <p class="">We can declare constants using the <span class="highlight highlight-strong">const</span> keyword.</p>
-                        
-                    
-
-                    
-
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                
-                <section class="">
-                    
-
-                    
-
-                    
-                        <pre><code>fn main() {
+            </section>
+            <section class="no-divider">
+                <h2>2. Constants</h2>
+                <p>Like immutable variables, constants are not allowed to change, but there are a few
+                    differences between constants and variables.</p>
+                <p>First, we aren&#39;t allowed to use mut with constants. Constants aren&#39;t just immutable
+                    by default, they&#39;re always immutable. The var_type must be specified for constants.</p>
+                <p>Constants can be declared in any scope, including the global scope, which makes them useful
+                    for values that many parts of code need to know about.</p>
+                <p>The last difference is that constants may be set only to a constant expression, not the
+                    result of a value that could only be computed at runtime. This means constants must be known at
+                    compile time.</p>
+                <p>Constants are valid for the entire time a program runs, within the scope in which they were
+                    declared.</p>
+                <p>We can declare constants using the const keyword.</p>
+            </section>
+            <section>
+                <pre><code>fn main() {
     // const ONE_HOURS_IN_SECONDS = 60 * 60 * 1; // error: must specify variable type
-
     const TWO_HOURS_IN_SECONDS: u32 = 60 * 60 * 2;
     println!(&#34;The value of TWO_HOURS_IN_SECONDS is: {TWO_HOURS_IN_SECONDS}&#34;);
-
     let sim = 60;
     // const THREE_HOURS_IN_SECONDS: u32 = sim * 60 * 3;  // not allowed
 }</code></pre>
-                    
-
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                    <hr class="post-separator" />
-                
-            
-                
-                
-                <section class="no-divider">
-                    
-                        <h2>3. Shadowing</h2>
-                    
-
-                    
-                        
-                            <p class=""><span class="line-bold line-tone-warm">We can declare a new variable with the same name as a previous variable using shadowing,</span> like the code in the snippet below.</p>
-                        
-                    
-
-                    
-
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                
-                <section class="">
-                    
-
-                    
-
-                    
-                        <pre><code>fn main() {
+            </section>
+            <section class="no-divider">
+                <h2>3. Shadowing</h2>
+                <p><span class="bold text-warm">We can declare a new variable with the same name as a
+                        previous variable using shadowing,</span> like the code in the snippet below.</p>
+            </section>
+            <section>
+                <pre><code>fn main() {
     let x = 5;
     let mut y = 9;
     let x = x + 1;
@@ -310,71 +126,35 @@
     }
     println!(&#34;The value of x is: {x}&#34;);
     println!(&#34;The value of y is: {y}&#34;);
-
     let characters = &#34;abcdef&#34;;
     println!(&#34;The value of characters is: {characters}&#34;);
-
     let characters = characters.len();
     println!(&#34;The value of characters is: {characters}&#34;);
-
     let mut characters = &#34;klmno&#34;;
     println!(&#34;The value of characters is: {characters}&#34;);
-
     characters = &#34;xyz&#34;;
     println!(&#34;The value of characters is: {characters}&#34;);
-
     let characters = characters.len();
     println!(&#34;The value of characters is: {characters}&#34;);
 }</code></pre>
-                    
-
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                
-                <section class="">
-                    
-
-                    
-
-                    
-
-                    
-
-                    
-                        
-                            <p>Using shadowing we can achieve the following things:</p>
-                        
-                        <ul>
-                            
-                                <li><span class="line-bold line-tone-warm">Change the value of an immutable variable</span> like x in the code above. This is safe because we explicitly do so.</li>
-                            
-                            
-                                <li><span class="line-bold line-tone-warm">Change the type of a variable</span> like characters, which is first a string then shadowed to characters.len() (a different type).</li>
-                            
-                            
-                                <li><span class="line-bold line-tone-warm">Change the mutability of a variable</span> like characters: first immutable, then mutable, then immutable again.</li>
-                            
-                            
-                                <li><span class="line-bold line-tone-warm">Shadow a variable in an inner scope without affecting the outer scope variable.</span> In the code above, the inner x is 12, and after the inner scope finishes, the outer x is still 6. Note that y is not shadowed, so its value changes in the outer scope.</li>
-                            
-                            
-                        </ul>
-                    
-
-                    
-                </section>
-                
-            
+            </section>
+            <section>
+                <p>Using shadowing we can achieve the following things:</p>
+                <ul>
+                    <li><span class="bold text-warm">Change the value of an immutable variable</span> like x
+                        in the code above. This is safe because we explicitly do so.</li>
+                    <li><span class="bold text-warm">Change the type of a variable</span> like characters,
+                        which is first a string then shadowed to characters.len() (a different type).</li>
+                    <li><span class="bold text-warm">Change the mutability of a variable</span> like
+                        characters: first immutable, then mutable, then immutable again.</li>
+                    <li><span class="bold text-warm">Shadow a variable in an inner scope without affecting the
+                            outer scope variable.</span> In the code above, the inner x is 12, and after the inner scope
+                        finishes, the outer x is still 6. Note that y is not shadowed, so its value changes in the outer
+                        scope.</li>
+                </ul>
+            </section>
         </article>
     </main>
-
     <script src="/script.js"></script>
 </body>
 

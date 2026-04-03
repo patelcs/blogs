@@ -10,711 +10,162 @@
 
 <body>
     <nav>
-    <div>
-        <a href="/" id="nav-brand">
-            <img src="/favicon.ico" alt="logo" width="32" height="32" />
-            CSP Blogs
-        </a>
         <div>
-            <a href="/blogs">Blogs</a>
-            <a href="https://portfolio-seven-iota-23.vercel.app/">About</a>
-            <button id="theme-toggle">🌙 Dark</button>
+            <a href="/" id="nav-brand">
+                <img src="/favicon.ico" alt="logo" width="32" height="32" />
+            </a>
+            <div>
+                <a href="/blogs">Blogs</a>
+                <a href="https://portfolio-seven-iota-23.vercel.app/">About</a>
+                <button id="theme-toggle">🌙 Dark</button>
+            </div>
         </div>
-    </div>
-</nav>
-
+    </nav>
     <main class="page">
         <header class="hero">
             <p class="eyebrow">Rust Learning Journal</p>
             <h1>Getting Started with Rust</h1>
-            <p class="subtitle">Starting again from scratch, this time with practice and small blogs to stay consistent.</p>
+            <p class="subtitle">Starting again from scratch, this time with practice and small blogs to stay
+                consistent.</p>
             <div class="meta">
-                
-                    <span>Mar 30, 2026</span>
-                
-                
-                    <span>Series: The Rust Book</span>
-                
-                    <span>Topic: Getting Started</span>
-                
+                <span>Mar 30, 2026</span>
+                <span>Series: The Rust Book</span>
+                <span>Topic: Getting Started</span>
             </div>
         </header>
-
         <article class="post">
-            
-            
-                
-                
-                <section class="">
-                    
-                        <h2>Why I&#39;m Starting Over</h2>
-                    
-
-                    
-                        
-                            <p class="">Hey everyone! From today onward I&#39;m starting Rust from scratch again. I had started earlier, stopped, and forgot a lot. This time I&#39;m writing small blogs alongside my learning so I can pick up where I left off and actually retain the concepts.</p>
-                        
-                            <p class="">The biggest mistake I made before was not practicing enough. Without practice, things fade and it takes time to get back into the zone. So now I&#39;m committing to consistent practice and documentation.</p>
-                        
-                    
-
-                    
-
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                
-                <section class="">
-                    
-                        <h2>Learning Plan</h2>
-                    
-
-                    
-                        
-                            <p class="">I&#39;m learning from <a href="https://doc.rust-lang.org/book/" target="_blank" rel="noreferrer"><span class="line-bold line-tone-accent">The Rust Book</span></a>. It can feel a bit theoretical at times, but I know it will teach me a lot of new concepts.</p>
-                        
-                            <p class="">Along the way, I&#39;ll solve coding problems I&#39;ve already done in other languages as well as new ones. I want to stay consistent this time, so let&#39;s start and see.</p>
-                        
-                            <p class="">The introduction in the book explains who the book is for and how to use it. Prior coding experience helps you move faster, and without it some parts can feel harder at first.</p>
-                        
-                    
-
-                    
-
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                    <hr class="post-separator" />
-                
-            
-                
-                
-                <section class="no-divider">
-                    
-                        <h2>1. Installation</h2>
-                    
-
-                    
-                        
-                            <p class="">I&#39;m on Ubuntu 22, so I followed the official Rust installer. One command and Rust was ready to go:</p>
-                        
-                    
-
-                    
-
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                
-                <section class="">
-                    
-
-                    
-
-                    
-
-                    
-                        <pre><code>$ curl --proto &#39;=https&#39; --tlsv1.2 https://sh.rustup.rs -sSf | sh</code></pre>
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                
-                <section class="">
-                    
-
-                    
-                        
-                            <p class="">Rust was installed successfully. You can open the docs locally (including The Rust Book) with:</p>
-                        
-                    
-
-                    
-
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                
-                <section class="">
-                    
-
-                    
-
-                    
-
-                    
-                        <pre><code>$ rustup doc</code></pre>
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                
-                <section class="">
-                    
-
-                    
-                        
-                            <p class="">To keep toolchain up to date:</p>
-                        
-                    
-
-                    
-
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                
-                <section class="">
-                    
-
-                    
-
-                    
-
-                    
-                        <pre><code>$ rustup update</code></pre>
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                
-                <section class="">
-                    
-
-                    
-                        
-                            <p class="">To remove Rust from the system:</p>
-                        
-                    
-
-                    
-
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                
-                <section class="">
-                    
-
-                    
-
-                    
-
-                    
-                        <pre><code>$ rustup self uninstall</code></pre>
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                    <hr class="post-separator" />
-                
-            
-                
-                
-                <section class="no-divider">
-                    
-                        <h2>2. Hello World</h2>
-                    
-
-                    
-                        
-                            <p class="">Create a project directory, add a main.rs file, and use the classic hello world:</p>
-                        
-                    
-
-                    
-
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                
-                <section class="">
-                    
-
-                    
-
-                    
-                        <pre><code>fn main() {
+            <section>
+                <h2>Why I&#39;m Starting Over</h2>
+                <p>Hey everyone! From today onward I&#39;m starting Rust from scratch again. I
+                    had started earlier, stopped, and forgot a lot. This time I&#39;m writing small
+                    blogs alongside my learning so I can pick up where I left off and actually
+                    retain the concepts.</p>
+                <p>The biggest mistake I made before was not practicing enough. Without
+                    practice, things fade and it takes time to get back into the zone. So now
+                    I&#39;m committing to consistent practice and documentation.</p>
+            </section>
+            <section>
+                <h2>Learning Plan</h2>
+                <p>I&#39;m learning from <a href="https://doc.rust-lang.org/book/" target="_blank"
+                        rel="noreferrer"><span class="bold">The Rust Book</span></a>. It
+                    can feel a bit theoretical at times, but I know it will teach me a lot of new
+                    concepts.</p>
+                <p>Along the way, I&#39;ll solve coding problems I&#39;ve already done in other
+                    languages as well as new ones. I want to stay consistent this time, so let&#39;s
+                    start and see.</p>
+                <p>The introduction in the book explains who the book is for and how to use it.
+                    Prior coding experience helps you move faster, and without it some parts can
+                    feel harder at first.</p>
+            </section>
+            <section class="no-divider">
+                <h2>1. Installation</h2>
+                <p>I&#39;m on Ubuntu 22, so I followed the official Rust installer. One command
+                    and Rust was ready to go:</p>
+            </section>
+            <section>
+                <pre><code>$ curl --proto &#39;=https&#39; --tlsv1.2 https://sh.rustup.rs -sSf | sh</code></pre>
+            </section>
+            <section>
+                <p>Rust was installed successfully. You can open the docs locally (including
+                    The Rust Book) with:</p>
+            </section>
+            <section>
+                <pre><code>$ rustup doc</code></pre>
+            </section>
+            <section>
+                <p>To keep toolchain up to date:</p>
+            </section>
+            <section>
+                <pre><code>$ rustup update</code></pre>
+            </section>
+            <section>
+                <p>To remove Rust from the system:</p>
+            </section>
+            <section>
+                <pre><code>$ rustup self uninstall</code></pre>
+            </section>
+            <section class="no-divider">
+                <h2>2. Hello World</h2>
+                <p>Create a project directory, add a main.rs file, and use the classic hello
+                    world:</p>
+            </section>
+            <section>
+                <pre><code>fn main() {
     println!(&#34;Hello, world!&#34;);
 }</code></pre>
-                    
-
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                
-                <section class="">
-                    
-                        <h2>Compile and Run</h2>
-                    
-
-                    
-                        
-                            <p class="">Compile the file (Rust is compiled) and run the output binary:</p>
-                        
-                    
-
-                    
-
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                
-                <section class="">
-                    
-
-                    
-
-                    
-
-                    
-                        <pre><code>$ rustc main.rs</code></pre>
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                
-                <section class="">
-                    
-
-                    
-
-                    
-
-                    
-                        <pre><code>$ ./main</code></pre>
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                
-                <section class="">
-                    
-
-                    
-                        
-                            <p class="">You should see &quot;Hello, world!&quot; printed in the terminal.</p>
-                        
-                    
-
-                    
-
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                
-                <section class="">
-                    
-                        <h2>3. Hello Cargo</h2>
-                    
-
-                    
-                        
-                            <p class="">Cargo is Rust&#39;s build system and package manager, similar to npm in Node or pip in Python.</p>
-                        
-                            <p class="">For small programs you might not need dependencies, but as projects grow, Cargo makes it easy to manage packages and builds without compiling everything manually.</p>
-                        
-                    
-
-                    
-
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                    <hr class="post-separator" />
-                
-            
-                
-                
-                <section class="no-divider">
-                    
-                        <h2>Create a Cargo Project</h2>
-                    
-
-                    
-                        
-                            <p class="">Create a new project using Cargo:</p>
-                        
-                    
-
-                    
-
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                
-                <section class="">
-                    
-
-                    
-
-                    
-
-                    
-                        <pre><code>$ cargo new hello_cargo</code></pre>
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                
-                <section class="">
-                    
-
-                    
-                        
-                            <p class="">This creates a hello_cargo directory with Cargo.toml, a .gitignore file, and src/main.rs.</p>
-                        
-                    
-
-                    
-
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                
-                <section class="">
-                    
-                        <h2>Project Structure</h2>
-                    
-
-                    
-                        
-                            <p class="">Cargo expects your source files inside the src directory. The top-level directory is for README files, license information, configuration files, and other metadata.</p>
-                        
-                    
-
-                    
-
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                
-                <section class="">
-                    
-                        <h2>Build and Run</h2>
-                    
-
-                    
-                        
-                            <p class="">Build the project and run the binary:</p>
-                        
-                    
-
-                    
-
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                
-                <section class="">
-                    
-
-                    
-
-                    
-
-                    
-                        <pre><code>$ cargo build</code></pre>
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                
-                <section class="">
-                    
-
-                    
-
-                    
-
-                    
-                        <pre><code>$ ./target/debug/hello_cargo</code></pre>
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                
-                <section class="">
-                    
-                        <h2>One Step Run</h2>
-                    
-
-                    
-                        
-                            <p class="">Build and run in a single step:</p>
-                        
-                    
-
-                    
-
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                
-                <section class="">
-                    
-
-                    
-
-                    
-
-                    
-                        <pre><code>$ cargo run</code></pre>
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                
-                <section class="">
-                    
-
-                    
-                        
-                            <p class="">To verify compilation quickly without producing a binary:</p>
-                        
-                    
-
-                    
-
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                
-                <section class="">
-                    
-
-                    
-
-                    
-
-                    
-                        <pre><code>$ cargo check</code></pre>
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                
-                <section class="">
-                    
-
-                    
-                        
-                            <p class="">optimized production build :</p>
-                        
-                    
-
-                    
-
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                
-                <section class="">
-                    
-
-                    
-
-                    
-
-                    
-                        <pre><code>$ cargo build --release</code></pre>
-                    
-
-                    
-
-                    
-                </section>
-                
-            
-                
-                
-                <section class="closing">
-                    
-                        <h2>Wrapping Up</h2>
-                    
-
-                    
-
-                    
-
-                    
-
-                    
-
-                    
-                        
-                            <p>That&#39;s all for today. See you tomorrow.</p>
-                        
-                    
-                </section>
-                
-            
+            </section>
+            <section>
+                <h2>Compile and Run</h2>
+                <p>Compile the file (Rust is compiled) and run the output binary:</p>
+            </section>
+            <section>
+                <pre><code>$ rustc main.rs</code></pre>
+            </section>
+            <section>
+                <pre><code>$ ./main</code></pre>
+            </section>
+            <section>
+                <p>You should see &quot;Hello, world!&quot; printed in the terminal.</p>
+            </section>
+            <section>
+                <h2>3. Hello Cargo</h2>
+                <p>Cargo is Rust&#39;s build system and package manager, similar to npm in Node
+                    or pip in Python.</p>
+                <p>For small programs you might not need dependencies, but as projects grow,
+                    Cargo makes it easy to manage packages and builds without compiling everything
+                    manually.</p>
+            </section>
+            <section class="no-divider">
+                <h2>Create a Cargo Project</h2>
+                <p>Create a new project using Cargo:</p>
+            </section>
+            <section>
+                <pre><code>$ cargo new hello_cargo</code></pre>
+            </section>
+            <section>
+                <p>This creates a hello_cargo directory with Cargo.toml, a .gitignore file, and
+                    src/main.rs.</p>
+            </section>
+            <section>
+                <h2>Project Structure</h2>
+                <p>Cargo expects your source files inside the src directory. The top-level
+                    directory is for README files, license information, configuration files, and
+                    other metadata.</p>
+            </section>
+            <section>
+                <h2>Build and Run</h2>
+                <p>Build the project and run the binary:</p>
+            </section>
+            <section>
+                <pre><code>$ cargo build</code></pre>
+            </section>
+            <section>
+                <pre><code>$ ./target/debug/hello_cargo</code></pre>
+            </section>
+            <section>
+                <h2>One Step Run</h2>
+                <p>Build and run in a single step:</p>
+            </section>
+            <section>
+                <pre><code>$ cargo run</code></pre>
+            </section>
+            <section>
+                <p>To verify compilation quickly without producing a binary:</p>
+            </section>
+            <section>
+                <pre><code>$ cargo check</code></pre>
+            </section>
+            <section>
+                <p>optimized production build :</p>
+            </section>
+            <section>
+                <pre><code>$ cargo build --release</code></pre>
+            </section>
+            <section>
+                <p>That&#39;s all for today. See you tomorrow.</p>
+            </section>
         </article>
     </main>
-
     <script src="/script.js"></script>
 </body>
 
