@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap");
+/* Use only system fonts; no external imports */
 
 /* Base Theme Variables */
 :root {
@@ -38,7 +38,8 @@
 }
 
 body {
-    font-family: "Source Sans 3", "Segoe UI", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue",
+        Arial, "Noto Sans", "Liberation Sans", sans-serif;
     color: var(--text-color);
     background: radial-gradient(1200px 800px at 10% -10%, #e0f2fe 0%, rgba(224, 242, 254, 0) 45%),
         radial-gradient(900px 600px at 90% 10%, #fef3c7 0%, rgba(254, 243, 199, 0) 40%),
@@ -112,7 +113,7 @@ nav #nav-brand {
     font-weight: 700;
     font-size: 1.5rem;
     color: var(--text-color);
-    font-family: "Merriweather", "Times New Roman", serif;
+    font-family: "Times New Roman", "Noto Serif", "Liberation Serif", serif;
 }
 
 /* Theme Toggle Button */
@@ -154,7 +155,7 @@ nav #theme-toggle:hover {
 }
 
 .hero h1 {
-    font-family: "Merriweather", "Times New Roman", serif;
+    font-family: "Times New Roman", "Noto Serif", "Liberation Serif", serif;
     font-size: clamp(2.2rem, 3.5vw, 3.2rem);
     margin: 0.5rem 0 0.75rem;
     color: var(--accent);
@@ -188,7 +189,7 @@ nav #theme-toggle:hover {
 }
 
 .list h2 {
-    font-family: "Merriweather", "Times New Roman", serif;
+    font-family: "Times New Roman", "Noto Serif", "Liberation Serif", serif;
     font-size: 1.6rem;
     margin-bottom: 1.25rem;
     color: var(--accent);
@@ -216,7 +217,7 @@ nav #theme-toggle:hover {
 }
 
 .card h3 {
-    font-family: "Merriweather", "Times New Roman", serif;
+    font-family: "Times New Roman", "Noto Serif", "Liberation Serif", serif;
     font-size: 1.5rem;
     margin-bottom: 0.75rem;
 }
@@ -263,7 +264,7 @@ nav #theme-toggle:hover {
 }
 
 .post h2 {
-    font-family: "Merriweather", "Times New Roman", serif;
+    font-family: "Times New Roman", "Noto Serif", "Liberation Serif", serif;
     font-size: 1.5rem;
     margin-bottom: 0.75rem;
     color: var(--accent);
