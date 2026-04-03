@@ -17,6 +17,9 @@
             <h1><%= blog.title %></h1>
             <p class="subtitle"><%= blog.subtitle %></p>
             <div class="meta">
+                <% if (blog.date) { %>
+                    <span><%= blog.date %></span>
+                <% } %>
                 <% blog.meta.forEach((item) => { %>
                     <span><%= item %></span>
                 <% }) %>
@@ -24,6 +27,72 @@
         </header>
 
         <article class="post">
+            <%
+                const escapeHtml = (value) => String(value)
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;")
+                    .replace(/"/g, "&quot;")
+                    .replace(/'/g, "&#39;");
+
+                const escapeAttr = (value) => String(value)
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;")
+                    .replace(/"/g, "&quot;")
+                    .replace(/'/g, "&#39;");
+
+                const getPartClass = (part) => {
+                    const classes = [];
+                    if (part.bold) classes.push("line-bold");
+                    if (part.tone) classes.push(`line-tone-${part.tone}`);
+                    if (part.className) classes.push(part.className);
+                    return classes.join(" ");
+                };
+
+                const renderParts = (parts) => parts.map((part) => {
+                    if (part.type === "link") {
+                        const linkText = escapeHtml(part.text || "");
+                        const linkUrl = escapeAttr(part.url || "#");
+                        const partClass = getPartClass(part);
+                        const highlightClass = part.highlight ? "highlight highlight-strong" : "";
+                        const linkInner = highlightClass
+                            ? `<span class="${highlightClass}">${linkText}</span>`
+                            : linkText;
+                        const wrapped = partClass
+                            ? `<span class="${partClass}">${linkInner}</span>`
+                            : linkInner;
+                        return `<a href="${linkUrl}" target="_blank" rel="noreferrer">${wrapped}</a>`;
+                    }
+                    if (part.type === "highlight") {
+                        const partClass = getPartClass(part);
+                        const inner = `<span class="highlight highlight-strong">${escapeHtml(part.text || "")}</span>`;
+                        return partClass ? `<span class="${partClass}">${inner}</span>` : inner;
+                    }
+                    const partClass = getPartClass(part);
+                    const text = escapeHtml(part.value || "");
+                    return partClass ? `<span class="${partClass}">${text}</span>` : text;
+                }).join("");
+
+                const renderParagraph = (paragraph, highlights, highlightsStrong) => {
+                    if (Array.isArray(paragraph)) {
+                        return { html: renderParts(paragraph), className: "" };
+                    }
+                    if (paragraph && typeof paragraph === "object") {
+                        if (Array.isArray(paragraph.parts)) {
+                            const classes = [];
+                            if (paragraph.bold) classes.push("line-bold");
+                            if (paragraph.lineTone) classes.push(`line-tone-${paragraph.lineTone}`);
+                            return { html: renderParts(paragraph.parts), className: classes.join(" ") };
+                        }
+                        const classes = [];
+                        if (paragraph.bold) classes.push("line-bold");
+                        if (paragraph.lineTone) classes.push(`line-tone-${paragraph.lineTone}`);
+                        return { html: escapeHtml(paragraph.text || ""), className: classes.join(" ") };
+                    }
+                    return { html: escapeHtml(paragraph || ""), className: "" };
+                };
+            %>
             <% blog.sections.forEach((section, index) => { %>
                 <% if (section.type === 'separator') { %>
                     <hr class="post-separator" />
@@ -35,14 +104,10 @@
                     <% } %>
 
                     <% if (section.type === 'text') { %>
-                        <% section.paragraphs.forEach((paragraph) => { %>
-                            <p><%= paragraph %></p>
-                        <% }) %>
-                    <% } %>
-
-                    <% if (section.type === 'text_html') { %>
-                        <% section.paragraphsHtml.forEach((paragraph) => { %>
-                            <p><%- paragraph %></p>
+                        <% section.paragraphs.forEach((paragraph) => { 
+                            const rendered = renderParagraph(paragraph, section.highlights, section.highlightsStrong);
+                        %>
+                            <p class="<%= rendered.className %>"><%- rendered.html %></p>
                         <% }) %>
                     <% } %>
 
@@ -59,8 +124,19 @@
                             <p><%= section.description %></p>
                         <% } %>
                         <ul>
-                            <% section.items.forEach((item) => { %>
+                            <% section.items.forEach((item) => { 
+                                if (Array.isArray(item)) {
+                            %>
+                                <li><%- renderParts(item) %></li>
+                            <% } else if (item && typeof item === "object") { %>
+                                <% if (Array.isArray(item.parts)) { %>
+                                    <li><%- renderParts(item.parts) %></li>
+                                <% } else { %>
+                                    <li><%= item.text || "" %></li>
+                                <% } %>
+                            <% } else { %>
                                 <li><%= item %></li>
+                            <% } %>
                             <% }) %>
                         </ul>
                     <% } %>

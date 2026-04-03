@@ -273,6 +273,42 @@ nav #theme-toggle:hover {
     margin-bottom: 1rem;
 }
 
+.line-bold {
+    font-weight: 600;
+}
+
+.line-tone-accent {
+    color: var(--accent);
+}
+
+.line-tone-muted {
+    color: var(--muted-color);
+}
+
+.line-tone-warm {
+    color: #f59e0b;
+}
+
+.highlight {
+    display: inline-block;
+    padding: 0.05em 0.35em;
+    border-radius: 0.45em;
+    font-weight: 600;
+    background: linear-gradient(120deg, rgba(250, 204, 21, 0.22), rgba(249, 115, 22, 0.18));
+    color: inherit;
+}
+
+.highlight-strong {
+    background: linear-gradient(120deg, rgba(59, 130, 246, 0.22), rgba(14, 165, 233, 0.2));
+    border: 1px solid rgba(59, 130, 246, 0.35);
+}
+
+.highlight code {
+    background: none;
+    color: inherit;
+    padding: 0;
+}
+
 .post ul {
     list-style: square;
     padding-left: 1.25rem;

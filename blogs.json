@@ -1,7 +1,7 @@
 [
   {
-    "title": "Introduction to Rust",
-    "slug": "introduction-to-rust",
+    "title": "Getting Started with Rust",
+    "slug": "getting-started-with-rust",
     "series": "The Rust Book",
     "date": "Mar 30, 2026",
     "excerpt": "Restarting the Rust journey with a clean slate: installation, hello world, and Cargo basics.",
@@ -21,11 +21,28 @@
         ]
       },
       {
-        "type": "text_html",
+        "type": "text",
         "title": "Learning Plan",
-        "paragraphsHtml": [
-          "I'm learning from <a href=\"https://doc.rust-lang.org/book/\" target=\"_blank\" rel=\"noreferrer\">The Rust Book</a>. It can feel a bit theoretical at times, but I know it will teach me a lot of new concepts.",
-          "Along the way, I'll solve coding problems I've already done in other languages as well as new ones. I want to be consistent this time, so let's start and see.",
+        "paragraphs": [
+          [
+            {
+              "type": "text",
+              "value": "I'm learning from "
+            },
+            {
+              "type": "link",
+              "text": "The Rust Book",
+              "url": "https://doc.rust-lang.org/book/",
+              "highlight": false,
+              "tone": "accent",
+              "bold": true
+            },
+            {
+              "type": "text",
+              "value": ". It can feel a bit theoretical at times, but I know it will teach me a lot of new concepts."
+            }
+          ],
+          "Along the way, I'll solve coding problems I've already done in other languages as well as new ones. I want to stay consistent this time, so let's start and see.",
           "The introduction in the book explains who the book is for and how to use it. Prior coding experience helps you move faster, and without it some parts can feel harder at first."
         ]
       },
@@ -34,7 +51,7 @@
       },
       {
         "type": "text",
-        "title": "1.1 Installation",
+        "title": "1. Installation",
         "paragraphs": [
           "I'm on Ubuntu 22, so I followed the official Rust installer. One command and Rust was ready to go:"
         ]
@@ -78,7 +95,7 @@
       },
       {
         "type": "text",
-        "title": "1.2 Hello World",
+        "title": "2. Hello World",
         "paragraphs": [
           "Create a project directory, add a main.rs file, and use the classic hello world:"
         ]
@@ -110,7 +127,7 @@
       },
       {
         "type": "text",
-        "title": "1.3 Hello Cargo",
+        "title": "3. Hello Cargo",
         "paragraphs": [
           "Cargo is Rust's build system and package manager, similar to npm in Node or pip in Python.",
           "For small programs you might not need dependencies, but as projects grow, Cargo makes it easy to manage packages and builds without compiling everything manually."
@@ -193,6 +210,248 @@
         "title": "Wrapping Up",
         "paragraphs": [
           "That's all for today. See you tomorrow."
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Variables in Rust",
+    "slug": "variables-in-rust",
+    "series": "The Rust Book",
+    "date": "Apr 1, 2026",
+    "excerpt": "Notes on variables, constants, and shadowing in Rust.",
+    "eyebrow": "Rust Learning Journal",
+    "subtitle": "Skipping the guessing game for now and focusing on Rust basics.",
+    "meta": [
+      "Series: The Rust Book",
+      "Topic: Variables"
+    ],
+    "sections": [
+      {
+        "type": "text",
+        "title": "Why This Topic",
+        "paragraphs": [
+          [
+            {
+              "type": "text",
+              "value": "Hey everyone! Yesterday I skipped :( But I don't want to give any excuse or justification, so let's just start the next topic: Variables in Rust."
+            }
+          ]
+        ]
+      },
+      {
+        "type": "text",
+        "paragraphs": [
+          [
+            {
+              "type": "text",
+              "value": "In the Rust Book, the second topic is "
+            },
+            {
+              "type": "link",
+              "text": "Programming a Guessing Game",
+              "url": "https://doc.rust-lang.org/book/ch02-00-guessing-game-tutorial.html"
+            },
+            {
+              "type": "text",
+              "value": ", but I'm skipping that for now. I'll cover the basics first and come back to it later."
+            }
+          ]
+        ]
+      },
+      {
+        "type": "separator"
+      },
+      {
+        "type": "text",
+        "title": "1. Variables and Mutability",
+        "paragraphs": [
+          [
+            {
+              "type": "text",
+              "value": "We can declare variables using the "
+            },
+            {
+              "type": "highlight",
+              "text": "let"
+            },
+            {
+              "type": "text",
+              "value": " keyword as shown in the code below."
+            }
+          ],
+          [
+            {
+              "type": "text",
+              "value": "The syntax for declaring variables is: "
+            },
+            {
+              "type": "highlight",
+              "text": "let <var_name>: <var_type> = <var_val>"
+            },
+            {
+              "type": "text",
+              "value": ". We'll talk about variable types in upcoming blogs."
+            }
+          ],
+          "As shown in variable b's definition, the var_type is optional and determined by the compiler only because the value is initialized in the same statement.",
+          "If declaration and initialization are split like variable x, then var_type is mandatory, and the value can be given later. But we cannot use x before initialization as shown.",
+          [
+            {
+              "type": "text",
+              "value": "Variables are by default immutable in Rust. When a variable is immutable, once a value is bound to a name, you can't change that value. As shown in the code, if you try to assign a value to b or x you can't do it."
+            }
+          ]
+        ]
+      },
+      {
+        "type": "code",
+        "code": "fn main() {\n    let a: i32 = 5;\n    println!(\"The value of a is: {a}\");\n\n    let b = 10;\n    // b = 12; // gives compile error\n    println!(\"The value of b is: {b}\");\n\n    let x: i32;\n    // println!(\"The value of x is: {x}\");  // gives compile error\n    x = 15;\n    // x = 20; // gives compile error\n    println!(\"The value of x is: {x}\");\n}"
+      },
+      {
+        "type": "text",
+        "paragraphs": [
+          "Below code shows how we can make variables mutable using the mut keyword in order to change the value that a variable holds."
+        ]
+      },
+      {
+        "type": "code",
+        "code": "fn main() {\n    let mut x = 5;\n    println!(\"The value of x is: {x}\");\n    x = 6;\n    println!(\"The value of x is: {x}\");\n}"
+      },
+      {
+        "type": "separator"
+      },
+      {
+        "type": "text",
+        "title": "2. Constants",
+        "paragraphs": [
+          {
+            "parts": [
+              {
+                "type": "text",
+                "value": "Like immutable variables, constants are not allowed to change, but there are a few differences between constants and variables."
+              }
+            ]
+          },
+          {
+            "parts": [
+              {
+                "type": "text",
+                "value": "First, we aren't allowed to use mut with constants. Constants aren't just immutable by default, they're always immutable. The var_type must be specified for constants."
+              }
+            ]
+          },
+          "Constants can be declared in any scope, including the global scope, which makes them useful for values that many parts of code need to know about.",
+          {
+            "parts": [
+              {
+                "type": "text",
+                "value": "The last difference is that constants may be set only to a constant expression, not the result of a value that could only be computed at runtime. This means constants must be known at compile time."
+              }
+            ]
+          },
+          "Constants are valid for the entire time a program runs, within the scope in which they were declared.",
+          {
+            "parts": [
+              {
+                "type": "text",
+                "value": "We can declare constants using the "
+              },
+              {
+                "type": "highlight",
+                "text": "const"
+              },
+              {
+                "type": "text",
+                "value": " keyword."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "code",
+        "code": "fn main() {\n    // const ONE_HOURS_IN_SECONDS = 60 * 60 * 1; // error: must specify variable type\n\n    const TWO_HOURS_IN_SECONDS: u32 = 60 * 60 * 2;\n    println!(\"The value of TWO_HOURS_IN_SECONDS is: {TWO_HOURS_IN_SECONDS}\");\n\n    let sim = 60;\n    // const THREE_HOURS_IN_SECONDS: u32 = sim * 60 * 3;  // not allowed\n}"
+      },
+      {
+        "type": "separator"
+      },
+      {
+        "type": "text",
+        "title": "3. Shadowing",
+        "paragraphs": [
+          {
+            "parts": [
+              {
+                "type": "text",
+                "value": "We can declare a new variable with the same name as a previous variable using shadowing,",
+                "tone": "warm",
+                "bold": true
+              },
+              {
+                "type": "text",
+                "value": " like the code in the snippet below."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "code",
+        "code": "fn main() {\n    let x = 5;\n    let mut y = 9;\n    let x = x + 1;\n    {\n        let x = x * 2;\n        y = y * 2;\n        println!(\"The value of x in the inner scope is: {x}\");\n        println!(\"The value of y in the inner scope is: {y}\");\n    }\n    println!(\"The value of x is: {x}\");\n    println!(\"The value of y is: {y}\");\n\n    let characters = \"abcdef\";\n    println!(\"The value of characters is: {characters}\");\n\n    let characters = characters.len();\n    println!(\"The value of characters is: {characters}\");\n\n    let mut characters = \"klmno\";\n    println!(\"The value of characters is: {characters}\");\n\n    characters = \"xyz\";\n    println!(\"The value of characters is: {characters}\");\n\n    let characters = characters.len();\n    println!(\"The value of characters is: {characters}\");\n}"
+      },
+      {
+        "type": "list",
+        "description": "Using shadowing we can achieve the following things:",
+        "items": [
+          [
+            {
+              "type": "text",
+              "tone": "warm",
+              "bold": true,
+              "value": "Change the value of an immutable variable"
+            },
+            {
+              "type": "text",
+              "value": " like x in the code above. This is safe because we explicitly do so."
+            }
+          ],
+          [
+            {
+              "type": "text",
+              "tone": "warm",
+              "bold": true,
+              "value": "Change the type of a variable"
+            },
+            {
+              "type": "text",
+              "value": " like characters, which is first a string then shadowed to characters.len() (a different type)."
+            }
+          ],
+          [
+            {
+              "type": "text",
+              "tone": "warm",
+              "bold": true,
+              "value": "Change the mutability of a variable"
+            },
+            {
+              "type": "text",
+              "value": " like characters: first immutable, then mutable, then immutable again."
+            }
+          ],
+          [
+            {
+              "type": "text",
+              "tone": "warm",
+              "bold": true,
+              "value": "Shadow a variable in an inner scope without affecting the outer scope variable."
+            },
+            {
+              "type": "text",
+              "value": " In the code above, the inner x is 12, and after the inner scope finishes, the outer x is still 6. Note that y is not shadowed, so its value changes in the outer scope."
+            }
+          ]
         ]
       }
     ]
